@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo de novios</title>
+    <style>
+        body{background-color: black;}
+        .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: grey;
+  text-align: center;
+}
+#arrPrint{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    color:white;
+    font-size: 20px;
+}
+#boton{
+    margin: auto;
+    padding: 10px;
+    margin: 0;
+  position: absolute;
+  left:45%
+ 
+}
+details{
+    color:white;
+    position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 5%
+
+
+}
+    </style>
+</head>
+<body>
+    
+   <img src="https://thumbs.dreamstime.com/b/dise%C3%B1o-de-logotipo-letra-nye-sobre-fondo-negro-concepto-del-la-original-creativa-l%C3%A1piz-241007260.jpg" alt="" width="10%">
+    <pre id="arrPrint"></pre>
+    <br>
+   
+    
+    <div style="color:white;margin:30px">
+        Información:
+        <ul>
+            <li id="li1">Fecha de inicio: </li>
+            <li id="li2">Fecha de hoy: </li>
+            <li id="li3">Cantidad en dias: </li>
+            <li id="li4">cantidad de meses: </li>
+
+
+        </ul>
+
+    </div>
+    
+
+    <div class="footer">Hecho con amor para <strong>Normis y Estebitan</strong><div class="br">Por Esteban</div>  </div>
+
+</body>
+<script>
+window.onload = function(){
+    //creo la fecha de hoy
+let hoy = new Date()
+//tomo los milisegundos de la fecha de hoy y el dia inicial del round
+let fechaFin = hoy.getTime();
+console.log("fecha fin: " +fechaFin)
+let fechaInicio = new Date('2021-07-02').getTime();
+console.log("fecha inicio: " + fechaInicio)
+console.log("Cantidad de dias: " + ((fechaFin - fechaInicio))/(1000*60*60*24))
+//calculo la diferencia y la paso a cantidad de dias dividiendolo por 7 para saber la cantidad de semanas que pasaron
+let entero = parseInt(((fechaFin - fechaInicio)/7)/(1000*60*60*24))
+console.log("cantidad de semanas: "+entero)
+//imprimo para que no quede vacio (solo valido durante la primer semana)
+
+//roto los valores del array segun la cantidad de semanas que pasaron del dia inicial
+
+let inicioEnDias = new Date(fechaInicio)
+let finEnDias = new Date(fechaFin)
+document.getElementById("li1").innerHTML = "Fecha de inicio: " + inicioEnDias
+        document.getElementById("li2").innerHTML = "Fecha de hoy: " + finEnDias
+        document.getElementById("li3").innerHTML = "Cantidad de dias: "+ parseInt(((fechaFin - fechaInicio))/(1000*60*60*24))
+        document.getElementById("li4").innerHTML = "Cantidad de meses: "+parseInt(((fechaFin - fechaInicio))/(1000*60*60*24))/30
+
+}
+</script>
+</html>
