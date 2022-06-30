@@ -116,7 +116,7 @@
         //tomo los milisegundos de la fecha de hoy y el dia inicial del round
         let fechaFin = hoy.getTime();
         console.log("fecha fin: " + fechaFin)
-        let fechaInicio = new Date('2021-07-02').getTime();
+        let fechaInicio = new Date(`2021-07-01T00:00`).getTime();
         console.log("fecha inicio: " + fechaInicio)
         console.log("Cantidad de dias: " + ((fechaFin - fechaInicio)) / (1000 * 60 * 60 * 24))
         //calculo la diferencia y la paso a cantidad de dias dividiendolo por 7 para saber la cantidad de semanas que pasaron
